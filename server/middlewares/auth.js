@@ -2,11 +2,10 @@ const jwt = require('jsonwebtoken')
 
 module.exports = {
     check: (req,res,next) => {
-        let providedToken = req.header.providedToken
-
+        let providedToken = req.headers.token
         if(providedToken){
             try{
-                let tokenCheck = jwt.check(providedToken, process.eventNames.SECRET)
+                let tokenCheck = jwt.verify(providedToken, process.env.SECRET)
                 next()
             }catch(err){
                 res.status(500).json({

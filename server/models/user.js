@@ -12,7 +12,7 @@ const userSchema = new Schema({
     picture  : String,
 })
 
-const User = mongoose.models('User', userSchema)
+const User = mongoose.model('User', userSchema)
 
 //middleware check exist account
 userSchema.pre('save', function(next){

@@ -24,7 +24,7 @@ module.exports = {
         })
     },
     readByUserId: (req, res) => {
-        Password.findById({userid : req.body.userid})
+        Password.find({userid : req.body.userid})
         .sort({updatedAt: -1})
         .exec()
         .then(userPassword => {

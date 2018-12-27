@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/signup', userController.signUp)
-router.post('signin', userController.signIn)
+router.post('/signin', userController.signIn)
 router.get('/tesjwt', auth.check, userController.tesJwt)
 
 module.exports = router;

@@ -6,7 +6,6 @@ const saltRound = 10
 module.exports = {
     signUp :(req,res) =>{
         let userPassword = bcrypt.hashSync(req.body.password, saltRound)
-
         User.create({
             username : req.body.username,
             password : userPassword,
@@ -44,7 +43,7 @@ module.exports = {
         .exec()
         .then(userData=> {
             if(userData){
-                let passwordCheck = bcrypt.compareSync(req.body.password, userdata.password)
+                let passwordCheck = bcrypt.compareSync(req.body.password, userData.password)
                 if (passwordCheck){
                     let token = jwt.sign({userid : userData._id}, process.env.SECRET)
                     res.status(200).json({
