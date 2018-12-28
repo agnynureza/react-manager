@@ -2,7 +2,7 @@ import{SET_USER_DATA, RESET_USER_DATA } from './signin.actionType'
 
 const initialState ={
     userData: {
-        userId: '' || localStorage.getItem('userId')
+        userId: '' || localStorage.getItem('userId'),
         userToken: `` || localStorage.getItem('userToken'),
         username: `` || localStorage.getItem('username'),
         email: `` || localStorage.getItem('email')

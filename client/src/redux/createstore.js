@@ -1,11 +1,11 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux'
 import thunk from 'redux-thunk'
-import signInReducer from './sigin/signin.reducer'
+import signInReducer from './signin/sigin.reducer'
 import passwordReducer from './password/password.reducer'
 
 const reducers = combineReducers({
     signInReducer: signInReducer,
-    passwordReducer: passwordReducer
+   passwordReducer: passwordReducer
 })
 
 const store = createStore(

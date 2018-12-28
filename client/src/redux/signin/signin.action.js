@@ -1,5 +1,7 @@
 import {SET_USER_DATA, RESET_USER_DATA} from './signin.actionType'
 import axios from 'axios'
+import swal from 'sweetalert';
+
 
 export const signInUser = (payload)=> {
     return(dispatch)=> {
@@ -12,24 +14,24 @@ export const signInUser = (payload)=> {
             }
         })
         .then(user =>{
-            if(user.status == 200){
-                alert('Success Login!')
+            if(user.status === 200){
+                swal("Success Login!", "welcome to react password manager", "success");
                 localStorage.setItem('userId', user.data.data.id)
                 localStorage.setItem('userToken', user.data.data.token)
                 localStorage.setItem('username', user.data.data.name)
                 localStorage.setItem('email', user.data.data.email)
                 dispatch(signInUserSuccess(user.data.data))
             }else{
-                alert('Login Failed')
+                swal("Failed Login!", "Check your username/password", "error");
             }
         })
         .catch(err =>{
-            alert(`Login failed ${err}!`)
+            swal("Failed Login!", `${err}!`, "error");
         })
     }
 }
 
-export default signUpuser = (payload) =>{
+export const signUpUser = (payload) =>{
     return(dispatch) => {
         return axios({
             method: 'POST',
@@ -43,15 +45,15 @@ export default signUpuser = (payload) =>{
             }
         })
         .then(user =>{
-            if(user.status == 200){
-                alert('Sign Up Success!')
+            if(user.status === 200){
+                swal("Sign up Success!", "welcome to react password manager", "success");
                 localStorage.setItem('userId', user.data.data.id)
                 localStorage.setItem('userToken', user.data.data.token)
                 localStorage.setItem('username', user.data.data.name)
                 localStorage.setItem('email', user.data.data.email)
                 dispatch(signInUserSuccess(user.data.data))
             }else{
-                alert('Sign up Failed!')
+                swal('Sign up Failed!',"","error")
             }
         })
         .catch(err=>{
