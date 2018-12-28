@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const timestamps = require('mongoose-timestamp')
 
 const userSchema = new Schema({
     id_fb    : String,
@@ -11,6 +12,8 @@ const userSchema = new Schema({
     gender    : String,
     picture  : String,
 })
+
+userSchema.plugin(timestamps);
 
 const User = mongoose.model('User', userSchema)
 

@@ -1,5 +1,6 @@
 const mongoose      = require('mongoose');
 const Schema        = mongoose.Schema;
+const timestamps = require('mongoose-timestamp')
 
 const passwordSchema = new Schema({
     url    : String,
@@ -9,6 +10,8 @@ const passwordSchema = new Schema({
         type: Schema.Types.ObjectId, ref:'User'
     },
 })
+
+passwordSchema.plugin(timestamps);
 
 const Password = mongoose.model('Password', passwordSchema);
 
