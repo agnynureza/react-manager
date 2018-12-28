@@ -11,7 +11,7 @@ import {
     return (dispatch) => {
       return axios({
         method: `POST`,
-        url: `http://localhost:3000/api/passwords/findbyuserid`,
+        url: `http://reactmanager-api.agnynureza.online/api/passwords/findbyuserid`,
         data: {
           userid: userid
         }
@@ -32,7 +32,7 @@ import {
     return (dispatch) => {
       return axios({
         method: `POST`,
-        url: `http://localhost:3000/api/passwords`,
+        url: `http://reactmanager-api.agnynureza.online/api/passwords`,
         data: {
           url: payload.url,
           username: payload.username,
@@ -53,7 +53,7 @@ import {
     return (dispatch) => {
       return axios({
         method: `GET`,
-        url: `http://localhost:3000/api/passwords/findbyid/${payload}`
+        url: `http://reactmanager-api.agnynureza.online/api/passwords/findbyid/${payload}`
       })
       .then((password) => {
         dispatch(findPasswordSuccess(password.data.data))
@@ -68,7 +68,7 @@ import {
     return (dispatch) => {
       return axios({
         method: `POST`,
-        url: `http://localhost:3000/api/passwords/${id}`,
+        url: `http://reactmanager-api.agnynureza.online/api/passwords/${id}`,
         data: {
           url: payload.url,
           username: payload.username,
@@ -88,7 +88,7 @@ import {
     return (dispatch) => {
       return axios({
         method: `DELETE`,
-        url: `http://localhost:3000/api/passwords/${id}`,
+        url: `http://reactmanager-api.agnynureza.online/api/passwords/${id}`,
       })
       .then(() => {})
       .catch((err) => {
@@ -108,7 +108,7 @@ import {
     return (dispatch) => {
       return axios({
         method: `POST`,
-        url: `http://localhost:3000/api/passwords/showpassword`,
+        url: `http://reactmanager-api.agnynureza.online/api/passwords/showpassword`,
         data: {
           username_email: userData.username_email,
           password: userData.password,

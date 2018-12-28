@@ -7,7 +7,7 @@ export const signInUser = (payload)=> {
     return(dispatch)=> {
         return axios({
             method: 'POST',
-            url: `http://localhost:3000/api/users/signin`,
+            url: `http://reactmanager-api.agnynureza.online/api/users/signin`,
             data:{
                 username_email:payload.username_email,
                 password: payload.password
@@ -35,7 +35,7 @@ export const signUpUser = (payload) =>{
     return(dispatch) => {
         return axios({
             method: 'POST',
-            url: `http://localhost:3000/api/users/signup`,
+            url: `http://reactmanager-api.agnynureza.online/api/users/signup`,
             data:{
                 username: payload.username,
                 password: payload.password,

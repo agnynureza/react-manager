@@ -91,7 +91,7 @@ class ModalVerify extends Component {
           contentLabel="Example Modal"
           ariaHideApp={false}
         >
-          <p className="text-center">Please confirm your password to show</p>
+          <p className="text-center">Please confirm your login password to show</p>
           <div className="form-group col-md-6 col-md-offset-3">
             <input name="password" type="password" className="form-control" placeholder="Your Password" onChange={ this.handlePasswordChange } />
           </div>
